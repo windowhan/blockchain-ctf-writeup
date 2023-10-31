@@ -1,0 +1,11 @@
+forge-std/=lib/forge-std/src/
+forge-ctf/=lib/forge-ctf/src/
+@openzeppelin/=lib/openzeppelin-contracts/
+@uniswap/merkle-distributor/=lib/merkle-distributor/
+ds-test/=lib/forge-std/lib/ds-test/src/
+erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/
+forge-ctf/=lib/forge-ctf/src/
+forge-std/=lib/forge-std/src/
+merkle-distributor/=lib/merkle-distributor/contracts/
+openzeppelin-contracts/=lib/openzeppelin-contracts/
+openzeppelin/=lib/openzeppelin-contracts/contracts/

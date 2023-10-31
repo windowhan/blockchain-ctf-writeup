@@ -1,0 +1,370 @@
+from web3 import Web3
+import json
+
+def fileWrite(filename, txt):
+    fp = open(filename, "w")
+    fp.write(txt)
+    fp.close()
+
+
+step1_list_txt = """0x01e9d7e56ae5bd265ae88ae7479993f62c291c4e
+0x06e391cc4e33bdaf53cf6b4535156083dd6a1105
+0x06b2d3e87374468a131ad5d2383ba99767fb4672
+0x06652dee01a6da6a97d08eb41ff84e506eb52266
+0x0a5763a21baa4615b6730d09b2256f664b4b9a3a
+0x0bd52b4940e7a480b11e716ca108b8990ab9834a
+0x0c390991636667acec70f7420a9d3d7bb9357774
+0x1444dfc9b64ca5d059fc8c7b46f24d7e5ad7f2e4
+0x180f2ffb36795f59cefa9fe23f30c4358dff20e0
+0x18fa5eb014e634e6eeb4fc7a50c18ff69ccd22a2
+0x1a564b214bcb3af1f739d383b499e047321d29b6
+0x1c4f067d595b730c7e8f94c49f241eacb2cf9966
+0x1c4abdd54b04ce6b34be5f4aad56bc49d39aa8ff
+0x1ed7bba94ef81f00177aca8f5ca48f793242fee0
+0x22b847a9e2d98f041d926a1b99730310a5bb5844
+0x231f860c06f861a4f0a1bcae5641984b0d3c9e11
+0x23873a6b44cf6836129a0d2bfe6f76d57cac8cdb
+0x25d86b3d8062a1bf74684e02e9dc3331fefbf460
+0x26ba9149790f8f4ae46fa0b6bfcb6365b558b790
+0x26428a332ee21299c1e4653e3d5d789320f15025
+0x28c46683de9b1a4eaf13ed2be356ffc2dd856c67
+0x2a41e304d26f6bc4194e446f46473e1088fe7700
+0x2b3acea6ae7ce46ae26879f1178d6c7c970f4739
+0x31024c6f8579d72068f890557b796f90a3775636
+0x326a5121e0f98abbb7c20f0c4a0c0b7a35b1c64b
+0x34eb380fe654fa01bb372ce26165822b61b4e682
+0x357499254fa857fc5ba5170f955c456e46021889
+0x3966716ce6d0b2f9829bc2d7ce6061aa652bd197
+0x3f98a0a2c53cf09c2e1201e0063ba698ffb70b8a
+0x427802703c0dc90342e258717876cecc588e2224
+0x44a8b254c6f841e655c7d969d3f680426ac7d9a9
+0x449b889bfd9f50050a741cb8d8685d045f359d58
+0x45ccd0abcbb2549cbce19288bbb770177e45b73d
+0x47f725318acc8842e9d57d83c4474f641358a741
+0x4707236a0d657064e179b95bc63d6d9124edf81a
+0x4baf4137e917ca8f0d0d1b6d060a0b255d4de1ee
+0x50b20ec0f2b461d5cc11a96baa1b337eecbe63de
+0x50a58e650203baa8da0b1c2c059fd49f6fb14fa1
+0x508030b1ac6e7bb99474e99a8af7f3e086458a0f
+0x5187df681bbf9fb053cbb4f6702879a976321782
+0x5459a68ab77124976e0dc88ed10ff6256e8227e4
+0x57d95a294bc376d3ff17304071e80315fc9c7598
+0x58a26ee34709149433ea0b7bb320476529c10de2
+0x5e7a297c2172ff30fc087f428c9a7e866609ef98
+0x659955be12e1e5c1e12459865c9d814e4e58326d
+0x6caeb5f5f64008c61593b02a7d1f3ca02da0f6da
+0x6ca412fe30893a860d45f0d4383976cc12e7f04a
+0x6ee8cb0ecfe7186e79e1f45595b6d3878fb5e46d
+0x6fc15dfed59e29979cfce0574c5a3e49cc3d6f43
+0x70b5c853555b69399e1d1f6da71229222cee3372
+0x71475ed38c1c28ee81088a0744258c2ba747b35c
+0x73e9a34168098f2e912891dd3e24e3c94bd26b3b
+0x774bb31aa3e50bece2aa6baf75c75449c734f926
+0x784b9b30d6bb0ca169a90b49566d4c309cf46f82
+0x78b09990fce81edff5e24e599fe2b64ce244ef71
+0x78081e9ddba9e8b1da85807109793c051448b8c1
+0x7be885f28dec5e552107ff332599fddb77903fa9
+0x7bbbbe54b4156f0e63dc2da508eeb7265250d4c5
+0x7c6893bea31e809c9a9f2fc1840cd078dbe0c9c4
+0x7e90cdb1908b01513359d2d2d8a9fa7e2cfb44fc
+0x84ece3c79098e3d8167a8b708eb9b030d1c5bfcd
+0x89702f59ba84a08092c393b2d0670649c6a9f734
+0x8dc8463900ecdc8826bcaec96672d5a2ed2224be
+0x9169b297520a166a7c3280081ec9103c551187d2
+0x927183a292d8039c2f38cbdecb0c5d8903a8519c
+0x9401f5b873259b17bad95afd73286b9d56580c34
+0x96616a04bff6d0f22e7c8e0da0bc006aad4cfcb9
+0x990cd430cb3d16fde21b09cbfe390dd2718ea957
+0x990aa14b1bf75e50b8619aded96ba18ff63491e2
+0x9a6aff1fc13d78b412f4816becb883da11d3818f
+0x9d28f06f698389b90515a86037b6237af1020cfa
+0x9dbf81e9d991cf8eadcb4ae6b53d6810bb9b5abf
+0x9d1df80583b93ec66e316694889a98fdd2c19921
+0x9fd25b70f348ae41ed032cc4ec753b1dd1c57279
+0xa084fd8b59e8eca6e856573c73b8810043a4fbbc
+0xa4f210208297d4b1ce44b5b0fca4969b9e07b32b
+0xa4ba872d1d6274e1975501d44d328f634294694e
+0xa6cc74699538840796922a1bb5eace02036470bb
+0xabe56225e77fb8c2b30097538f79a5dd9dee42f6
+0xadbb2a69b90eccef2d1c9d2ebf051337924d70cb
+0xadacb54d4c530fc0cc964595ededac93ff6aa593
+0xadf9028a2493df58d17a8b54b100911ce0baee41
+0xb1203f3f73137ed7cc5c00105e01e29b234798e4
+0xb2a6a0338bc39e19d077790bafbff55c1cc7f92f
+0xb343cf282f92180789743156d3c4d7e792eaa820
+0xb55fce3ab7a2c2b08fccc36d28abbb9bc0ead2a2
+0xb7e6afd9331117feb3b96cd4da57bc6e880eccb8
+0xb77173cafb1f13c42f67e404b7a0c55b379a9078
+0xb9472cbe4e5b0302001dca1cabd61aa738697821
+0xba3118d458ecdc2bdd47aed82419dc4a7edd6ea4
+0xbcb68b57af41d4c58d7506beef19ea3fee16e468
+0xbfb2e0239397e4388dc91dd44b953d83a5db3386
+0xc0ad796b5eb2e44b72ef591c4c980df476a5f247
+0xc53e9f8a404e0b2595bc04ac2360b692e1422951
+0xc675c906d7f126a3d51125c216df343e59c9cf86
+0xc8692e8d22f501e3c520abfc809089c8724408e9
+0xc90bd6cabd8cea150d9c0cada497b50b23885ad1
+0xca0406dd3f3d0d748312f1781b4b8519587a7d01
+0xcac39bdd0e8ca5326ec9ee6dc9fc38448865968b
+0xd53fd51ba5b759a3ec8d35ec8387df304facef15
+0xd5dcaf90748d0b469599be94c88d8117e4eb969f
+0xd7e85c993dc6292525b3a88c774609f68d1f0d52
+0xd8052952f1fbd36a3c5439ff3331854a1bbfd3d2
+0xdb0f8bcd7beff02719dad212c3700a971b4aac92
+0xdb1fd3fce02ea33fe5d1dc3eac191183d9f14437
+0xddb64381d3954d70f48f967499d405f1311016c4
+0xde30fa11526c1cc19099216748fcfdbb700918ab
+0xdf5021aad25b014f67b96e3b8c77052b0499b153
+0xe0aee708d377d57a6eac5d2a97ddcd012733b552
+0xe41512a7dea7a7e65286a93f83ef6bab4bd6b90e
+0xe6e02dd1ded9ff3c684f225467ca365833bc9ed7
+0xe997045d066b704bf1dadee713f1a3e317ceb7cb
+0xeae7654431cb36ff34c60a97063a491283566283
+0xec2ada8ec69b6de29e0ef2a5529fe4a1afa810e1
+0xedd27bf9275c8f89e53f318fdfb3da32987f2fe3
+0xedf987a492ac1bb4058fc87ed299d0b069820817
+0xeeca5f93152970bfe4b176366a5c30a7a1f6957e
+0xef5054578b477d7612e5ba3132e4c91ea4bd571c
+0xefeeca733481b5e542e4682dd90ef6ad5a989ba4
+0xef26542960a71c8596ec8ab0b926599b129d36a8
+0xf04c89cad6af46cff22ac7d5a3c40f81cbf7a42d
+0xf023ce5bc920b6454e12a444de21c7cec4a519f6
+0xf2a5372efecff65ceea0d51db5ff83d14e5e545e
+0xf7053100332a644e18452dceecb497b60395e455
+0xf8a2e8ddfa04a7b9acae148955c1fbde0d3c8a7d
+0xf9a3ead23aa3124f6f00e12ab509a12ba74fff25
+0xfe8b93425d534e88affbc06f7e0cef673d359393
+0xfe32a710a4076d2cc143792434204896aa9e797c"""
+
+
+step2_list_txt = """0x0d4743269fec611b422d0a209a460cd8cc0cc8b9
+0x0dbbd88416b5eff9186e33477360578fd1fd89c2
+0x0c0dda2445c0cdca4eeac91d22a8629c7f428d2a
+0x660f636d7379948afe7ee750d2a36bf13143cd21
+0x667631fde0f650971fba8c4897fdbae7e5fff107
+0x3e2a4dddfe7e9ed3b9b11d8e8ae4543ca685e6a2
+0x50fda034c0ce7a8f7efdaebda7aa7ca21cc1267e
+0x68c70d41b193a4a86e56e9020aa4c910e4abbaf3
+0x57ead0a9f49fafdd2447f615b036f3c316af5171
+0x3b7921f5b25fc8339269eb8adb28278d5c1f01c3
+0x6f483bebadd1c9b83bdac86f520d31ab9a568c4e
+0x9eb8f11cba573d864b45e631375fa3a3585c8dbf
+0x048f6dfb9e674c1962d447924baffa9c8f68761c
+0x04e264a8ee30ec8298bfeda1a6bf3b78053115f4
+0x5661e00274bf838f7ee773e7c411f9fd6227ec4c
+0x3da4491fed9f6d6b1391b2a02991c8d035d7716f
+0x67668e84e7ebfd5aa92ee8ab2adcc9baf9698ccd
+0x0be0c528c9f2b0e0ed19a014b5ae49851548e7f8
+0x0e2094204d7450bc2da8fad0ef81995ab2db25b1
+0x9ca13029232c8f4aac1d42faa54a36ade41aa10d
+0x021b56bab67c6305a85e4f49faa0de94866b2251
+0x02043832751c842440a979829ea0bc0015d3081c
+0xb595496c91166da836a0ad5e866dbfe2f7d69379
+0xb24763b5451f8e7e218738a5d85471b6394e505e
+0xb27732feae161e1f42cfcd2b716bbf7f987fb984
+0xd9dc4d55542be58c87d118549488fd9f38e55efa
+0xad457072924e5a1a1c9807942211ba5d928cec8a
+0xd010b65120e027419586216d25bf86c2c24fcc4a
+0xbee90f759e4172065ce02754980fee013dc2ab74
+0xdff2aa5689fcbc7f479d8c84ac857563798436dd
+0xda581193cdf0efd943420e661e7c1ea2a0ca1a1f
+0xa2272c67375cf1f3dab45e68eb8adcbda95e7eca
+0xa56480f914539c7ccc7f1e733691e0854ab0c1cf
+0xd1a06725e9fee446b4a49cee85c9c213cc13f39a
+0xf3544ac9519c5ad9438c8989c1c0c0e2754a9e47
+0xee7f212545b3c388f8fd176f83bdff85f3dcea7d
+0xc9d9ec8fcb9506ff325f766e1d5967737c0ffa5a
+0xfc8040b12aaa03519c79eb9843f30220dd8e27e1
+0xfc67dbe95bfca584b65b81a7803de3c76eb0441b
+0xfc3faef4622a7822c575f4bf1d9a54f2e8b753ad
+0xfd8803af5dfb1bde5f104049b5dc31c211cb3e49
+0xfdffd6c9fce2c65e96a27cbafaf91206a42a0ac9
+0xfdb0bdc8b285ce2ef58965a989f86e10c09e7759
+0xe3bcc75ce893c7324e4f52bc01305fe634b2b047
+0xc6cdf89255ff215a9604f39500985aea05e318c2
+0x4e3787a9f38a87b3654b264cf968d15e815830c1
+0x1814222fa8c8c1c1bf380e3bbfbd9de8657da476
+0x27df152781619c5a5e3b78ed9ccd4e64e8869a1b
+0x11d7c430572e9aa86a9cee29b1128ff0dab7d8a1
+0x2996501051c99b94fde22dd259342b387706e72a
+0x29d91cc4ee6622a1eb7b30569890b7cd65b47b7c
+0x29baafb48a2b09cf8c0285ea084384f2ff205a70
+0x42da4f7fe0bc60d1b78522d1edcb5d64c6a81372
+0x4243062a46d809b3f4206407ed77364299d60486
+0x458965f1f6c38c5c7ea6c02bd53e40dfd70357d7
+0x733dd905346b757f7c9bccb09f92e798d87f16a1
+0x87b2a63bf4ec51559406b3bcceecf4b515864ea2
+0x87a79078dd5f904420ce5f77798b4ac635ed303c
+0x804eeb475c5e2e44826c636d7671db6b127d6e87
+0x178caddafd2b81ddc61581d7dad5d2bbbd43c59c
+0x8f8550753a6861bb6dfe65a5215bcfd8c218a90f
+0x4c07a21f279cbe1875be808e996c1ae4388af932
+0x210671bed37d221cde1eaaaccf6fe4f843ce1bc4
+0x448377a278e8d175886e13aecb9d19f87bf829de
+0x2ad672fda8a042c4c78c411bf9d4f1b320aa915a
+0x2f97abe5fe5c65870b87d1138cba47b7b39fd6a3
+0x384a291a4a8da29f5488cf1acf98cfd7f57f7559
+0x00cd1b195b403a5e3d6534afd942c928fc9217f0
+0x363a94a9ec421e27aa86b4015007c3698959e5cb
+0x5cb2f04e6a63f38624cfca70955eaf5f215b8f4d
+0x09e3b36dbdc641d73c38656605538c4b666db82b
+0x0900c4eaa6473f18693ddae91f51e5d1da31d9bd
+0x9129675ebe4f47d8628e4cc275ddd27dba710e13
+0x6209ee90b3810b2a21f55f8fe22d07da8196a62b
+0x96569f124f6a3b62093c7115f14f8005705ba48a
+0x9609df097d716f73cfd64d963ad72028e6e7e9ac
+0x54f214a009c90dcb2cdc2284f70a35b5b9370efe
+0x98bec9b1ddb0b975e68b533dee838b0e3a598614
+0x3f3e18aef051dc2b489cef138bb9e224f78f7117
+0x3f7e5a43252e06de0089aff407341d35cb711091
+0x06e2a669f4de7d537156106c4e1f605d67d201b3
+0x0a236b41add0073df05eac5fc8505ad745c7859d
+0x64e6a79d3ea323d3805bc5105a0da68b60dc8ab3
+0x9021c84f3900b610ab8625d26d739e3b7bff86ab
+0xba87e8767f499822eafead7cb2ce5c2aa87157ea
+0xa09da27a1f9329f0677a601ad3d5a26a00e81295
+0xb1ec61949e5db1d681316c0e2f9132afb62fc32f
+0xb6c83bea8b820298c0ad1d7cd49904f3b63eb76a
+0xa8cc687e981e9cb29e5baef75062a39430c8d334
+0xa8e05aef777af3381e48402a7aa13e62231c604b
+0xa87bcbdc5182091d7ee749a7ab726c380bcc191a
+0xa6cf99baf6723fc6134a84b026647661fa28715f
+0xb9afb207320b9f2d401c6022957307c20b0b5e48
+0xc3037b2a1a9e9268025ff6d45fe7095436446d52
+0xc4c2a0346c2121a89d064775346f19c9ac3e2b56
+0xcc493dcc8ac17f8384d3578822daa945b200299b
+0xcccdc0c1022393fac29dc07f0aaf568cfed65945
+0xf0cc94a6548caa471893bf42f8c1f2250de74928
+0xf7499f11cf81435ffd7bd5a2bdcf5532cfffabac
+0xfade503916c1d1253646c36c9961aa47bf14bd2d
+0xf185adff748ba3f564e4316da154a4bef30b558a
+0x2c6b36530c0f25fa2765e2901101b4fcf149dec4
+0x480ea104ff7063ed0af41c98d8ef2457afe2a41c
+0x70a072160db3f4b95b4f0bb870083cae21a7637c
+0x1ee21d7f57f3a98f7e7ef072e158f021c849f9c0
+0x1ed8ec0ec5d6a87824141205e44bacd4e9dc58ce
+0x4a992cdc4f0c60d5ceedca24c5db8078197152da
+0x8da6995e8cb3af3237945a0e628f312f32723a1c
+0x853b39fa77cbfaf1fce41534b3705cef3847e1e3
+0x712e990ffb170bfe8c0de8b4f25918589a80babe
+0x763ff35a46dc5bf092737cd400c76d0871bd64b2
+0x1cfe3c5aa08060c42c5ef898e82725a89ca5c5be
+0x47cbe03767517ae71117b261c1161b3fe2e12877
+0x78514802fdffe959bed073c1b9473cb5b8de5c22
+0x7a9e9c8d6bf448de297137390df9c9ff7f548ea9
+0x25c40bc17e4bf2f8c23acc99a7a38568f0890157"""
+
+step3_list_txt = """0x51f11c31dabb603de839f304b61ef7f714bdd458
+0x606563f8dc27f316b77f22d14d9cd025b4f70469
+0xa32ed20bfb3c829896df73ab2f88f1f0605f6bcc
+0x43976ae452932a0f52e95324cbd9a544259749f5
+0x52841ef08118ce0a929add88dd62a785662a2bea
+0x90d748138a409cbec43ca58c459c2698c6cd22d0
+0xdc3807699f92430c621f5badbdb0fde350865c46
+0xb9bad44f86cf2743a7b1ddd4b55ed2a14631ccf3
+0xe0fa881dbe326d3c4edcf5394b5edd2a79260691
+0x7f1cd65679d73eb98fcebe8b61c13d3d68605717"""
+
+step5_list_txt = """0x0b8f60be035cc5b1982ed2145c6bfc05f863ddc1
+0xb3c0f159b2d3b4bda68f5cec72d6d11e4592d934
+0xc671b7251a789de0835a2fa33c83c8d4afb39092
+0x7b1f4cdd4f599774feae6516460bccd97fc2100e
+0x00b1a4e7f217380a7c9e6c12f327ac4a1d9b6a14
+0x40778f8dc76edcdde50a5cd237f27ee1c79db32c"""
+
+step1_list_raw = step1_list_txt.split("\n")
+step2_list_raw = step2_list_txt.split("\n")
+step3_list_raw = step3_list_txt.split("\n")
+step5_list_raw = step5_list_txt.split("\n")
+
+
+fp = open("./airdrop-merkle-proofs.json")
+merkleData = json.loads(fp.read())["claims"]
+fp.close()
+
+output_folder = "./project/process_data/"
+
+
+step1_count = 0
+for elem in step1_list_raw:
+    output_dict = {}
+    output_dict["address"] = Web3.to_checksum_address(elem)
+
+    proofs = merkleData[output_dict["address"]]["proof"]
+    output_dict["b_index"] = merkleData[output_dict["address"]]["index"]
+    output_dict["c_amount"] = int(merkleData[output_dict["address"]]["amount"], 16)
+    proof_count = 0
+    output_dict["d_proofs"] = []
+    for proof in proofs:
+       output_dict["d_proofs"].append(proof)
+    fileWrite(output_folder + "step1/" + str(step1_count) + ".json", json.dumps(output_dict))
+    step1_count += 1
+
+step1_sum_dict = {}
+step1_sum_dict["fileCount"] = step1_count
+
+fileWrite(output_folder + "step1/summary.json", json.dumps(step1_sum_dict))
+
+
+
+
+step2_count = 0
+for elem in step2_list_raw:
+    output_dict = {}
+    output_dict["address"] = Web3.to_checksum_address(elem)
+
+    proofs = merkleData[output_dict["address"]]["proof"]
+    output_dict["b_index"] = merkleData[output_dict["address"]]["index"]
+    output_dict["c_amount"] = int(merkleData[output_dict["address"]]["amount"], 16)
+    output_dict["d_proofs"] = []
+    for proof in proofs:
+        output_dict["d_proofs"].append(proof)
+    output_dict["proof_count"] = proof_count
+
+    fileWrite(output_folder + "step2/" + str(step2_count) + ".json", json.dumps(output_dict))
+    step2_count += 1
+
+step2_sum_dict = {}
+step2_sum_dict["fileCount"] = step2_count
+
+fileWrite(output_folder + "step2/summary.json", json.dumps(step2_sum_dict))
+
+step3_count = 0
+for elem in step3_list_raw:
+    output_dict = {}
+    output_dict["address"] = Web3.to_checksum_address(elem)
+
+    proofs = merkleData[output_dict["address"]]["proof"]
+    output_dict["b_index"] = merkleData[output_dict["address"]]["index"]
+    output_dict["c_amount"] = int(merkleData[output_dict["address"]]["amount"], 16)
+    output_dict["d_proofs"] = []
+    for proof in proofs:
+        output_dict["d_proofs"].append(proof)
+    output_dict["proof_count"] = proof_count
+
+    fileWrite(output_folder + "step3/" + str(step3_count) + ".json", json.dumps(output_dict))
+    step3_count += 1
+
+step3_sum_dict = {}
+step3_sum_dict["fileCount"] = step3_count
+fileWrite(output_folder + "step3/summary.json", json.dumps(step3_sum_dict))
+
+step5_count = 0
+for elem in step5_list_raw:
+    output_dict = {}
+    output_dict["address"] = Web3.to_checksum_address(elem)
+
+    proofs = merkleData[output_dict["address"]]["proof"]
+    output_dict["d_proofs"] = []
+    output_dict["b_index"] = merkleData[output_dict["address"]]["index"]
+    output_dict["c_amount"] = int(merkleData[output_dict["address"]]["amount"], 16)
+    for proof in proofs:
+        output_dict["d_proofs"].append(proof)
+    output_dict["proof_count"] = proof_count
+
+    fileWrite(output_folder + "step5/" + str(step5_count) + ".json", json.dumps(output_dict))
+    step5_count += 1
+
+step5_sum_dict = {}
+step5_sum_dict["fileCount"] = step5_count
+fileWrite(output_folder + "step5/summary.json", json.dumps(step5_sum_dict))
